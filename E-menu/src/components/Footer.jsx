@@ -1,133 +1,153 @@
+import Logo from "./Logo";
 const Footer = () => {
   return (
-    <footer className="p-4 bg-primary conatiner-max sm:p-6 w-full">
-  <div className="flex justify-center md:justify-start items-center">
-    <div className="mb-3 md:mb-0"></div>
-  </div>
-  <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-y-10 lg:grid-cols-4 justify-center justify-items-center">
-    <div className="sm:col-span-1">
-      <a
-        data-testid="logo"
-        className="text-xl md:text-4xl font-semibold flex items-center"
-        href="/"
-      >
-        🍔 <span className="font-bold text-2xl">King Food</span>
-      </a>
-    </div>
-
-    <div>
-      <p className="font-semibold">Opening Hours</p>
-
-      <div className="flex flex-col items-start mt-5 space-y-2">
-        <p className="transition-colors duration-300 text-gray-400">
-          Monday - Friday
-        </p>
-        <p className="transition-colors duration-300 text-gray-400">
-          10:00 AM - 08:00 PM
-        </p>
-        <p className="transition-colors duration-300 text-gray-400">
-          Tel: 010-02-0340
-        </p>
+    <footer className="p-4 conatiner-max sm:p-6 w-full">
+      <div className="border-t border-default-200">
+        <div className="container">
+          <div className="grid items-center gap-6 py-6 lg:grid-cols-3 lg:py-10">
+            <div className="flex items-center justify-center">
+              <Logo />
+            </div>
+            <div className="lg:col-span-2">
+              <div className="mb-6 grid grid-cols-2 gap-6 md:grid-cols-4">
+                <div className="flex flex-col gap-3">
+                  <h5 className="mb-3 font-semibold text-default-950">About</h5>
+                  <div className="text-default-600">
+                    <a href="#">About Us</a>
+                  </div>
+                  <div className="text-default-600">
+                    <a href="#">Features</a>
+                  </div>
+                  <div className="text-default-600">
+                    <a href="#">Services</a>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h5 className="mb-3 font-semibold text-default-950">Company</h5>
+                  <div className="text-default-600">
+                    <a href="#">Our Team</a>
+                  </div>
+                  <div className="text-default-600">
+                    <a href="#">Partner with Us</a>
+                  </div>
+                  <div className="text-default-600">
+                    <a href="#">FAQs</a>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h5 className="mb-3 font-semibold text-default-950">Support</h5>
+                  <div className="text-default-600">
+                    <a href="">About</a>
+                  </div>
+                  <div className="text-default-600">
+                    <a href="#">Support Center</a>
+                  </div>
+                  <div className="text-default-600">
+                    <a href="#">Feedback</a>
+                  </div>
+                  <div className="text-default-600">
+                    <a href="#">Contact Us</a>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h5 className="mb-3 font-semibold text-default-950">
+                    Get in touch
+                  </h5>
+                  <div className="text-default-600">
+                    <a href="tel:+1234567891012">(+123) 456 789 123</a>
+                  </div>
+                  <div className="text-default-600">
+                    <a href="mailto:example@mail.com">example@mail.com</a>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <a className="cursor-pointer" href="#">
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-default-600 transition-all hover:text-primary"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                    </a>
+                    <a className="cursor-pointer" href="#">
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-default-600 transition-all hover:text-primary"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                      </svg>
+                    </a>
+                    <a className="cursor-pointer" href="#">
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-default-600 transition-all hover:text-primary"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          x="2"
+                          y="2"
+                          rx="5"
+                          ry="5"
+                        ></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                      </svg>
+                    </a>
+                    <a className="cursor-pointer" href="#">
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        strokeWidth="0"
+                        viewBox="0 0 512 512"
+                        className="text-default-600 transition-all hover:text-primary"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div>
-      <p className="font-semibold">Contact us</p>
-
-      <div className="flex flex-col items-start mt-5 space-y-2">
-        <a
-          href="#"
-          className="transition-colors duration-300 text-gray-400 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-        >
-          Help &amp; Support
-        </a>
-        <a
-          href="#"
-          className="transition-colors duration-300 text-gray-400 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-        >
-          Partner with us
-        </a>
-        <a
-          href="#"
-          className="transition-colors duration-300 text-gray-400 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-        >
-          Ride with us
-        </a>
+      <div className="absolute w-full border-t border-default-200 p-6 hide-in-print">
+        <div className="container">
+          <div className="mb-20 md:mb-3">
+            <p className="text-default-600 text-center">
+              Powered by BR Tech Solution Pvt Ltd
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div>
-      <p className="font-semibold">Legal</p>
-
-      <div className="flex flex-col items-start mt-5 space-y-2">
-        <a
-          href="#"
-          className="transition-colors duration-300 text-gray-400 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-        >
-          Terms &amp; Conditions
-        </a>
-        <a
-          href="#"
-          className="transition-colors duration-300 text-gray-400 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-        >
-          Cookie Policy
-        </a>
-        <a
-          href="#"
-          className="transition-colors duration-300 text-gray-400 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-        >
-          Privacy Policy
-        </a>
-      </div>
-    </div>
-  </div>
-  <hr className="my-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-  <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
-    <span className="text-sm text-gray-500 text-center dark:text-gray-400">
-      © 2024 KingFood™. All Rights Reserved.
-    </span>
-    <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 md:text-xl">
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href="https://github.com/qbentil"
-        className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
-      >
-        <svg
-          stroke="currentColor"
-          fill="currentColor"
-          strokeWidth="0"
-          viewBox="0 0 16 16"
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-      </a>
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href="mailto:bentilzone@gmail.com"
-        className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
-      >
-        <svg
-          stroke="currentColor"
-          fill="currentColor"
-          strokeWidth="0"
-          viewBox="0 0 24 24"
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path fill="none" d="M0 0h24v24H0z"></path>
-          <path d="M12 12.713l-11.42-8.562A1.994 1.994 0 0 1 2 4h20c.37 0 .718.103 1.02.281L12 12.713zM22 6.26V18c0 1.103-.897 2-2 2H4c-1.103 0-2-.897-2-2V6.26l10 7.5 10-7.5z"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
-</footer>
-
+    </footer>
   );
 };
 

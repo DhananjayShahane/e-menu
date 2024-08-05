@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import RestaurantMenuItem from './RestaurantMenuItem';
+import { useState, useEffect } from "react";
+import RestaurantMenuItem from "./RestaurantMenuItem";
 
 const RestaurantMenu = ({ menu }) => {
   const [activeAccordionIndex, setActiveAccordionIndex] = useState(1); // Default to 1
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filter, setFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filter, setFilter] = useState("all");
   const [filteredMenu, setFilteredMenu] = useState([]);
   const [noResults, setNoResults] = useState(false);
 
@@ -25,9 +25,9 @@ const RestaurantMenu = ({ menu }) => {
               itemName.includes(searchQuery.toLowerCase()) ||
               itemDescription.includes(searchQuery.toLowerCase());
             const matchesFilter =
-              filter === 'all' ||
-              (filter === 'veg' && isVeg) ||
-              (filter === 'non-veg' && !isVeg);
+              filter === "all" ||
+              (filter === "veg" && isVeg) ||
+              (filter === "non-veg" && !isVeg);
 
             return matchesSearchQuery && matchesFilter;
           }),
@@ -37,19 +37,22 @@ const RestaurantMenu = ({ menu }) => {
 
     // Set filtered menu and no results message
     setFilteredMenu(newFilteredMenu);
-    const hasResults = newFilteredMenu.some((m) => m.card.card.itemCards?.length > 0);
+    const hasResults = newFilteredMenu.some(
+      (m) => m.card.card.itemCards?.length > 0
+    );
     setNoResults(!hasResults);
 
     // Set activeAccordionIndex to the index of the first menu with results or a default if no results
     if (searchQuery) {
-      const firstResultIndex = newFilteredMenu.findIndex((m) => m.card.card.itemCards?.length > 0);
+      const firstResultIndex = newFilteredMenu.findIndex(
+        (m) => m.card.card.itemCards?.length > 0
+      );
       if (firstResultIndex !== -1) {
         setActiveAccordionIndex(firstResultIndex);
       } else {
         setActiveAccordionIndex(null); // No results
       }
     }
-
   }, [searchQuery, filter, menu]);
 
   const handleToggleAccordion = (index) => {
@@ -57,11 +60,11 @@ const RestaurantMenu = ({ menu }) => {
   };
 
   return (
-    <div className='container bg-white mx-auto p-4'>
-      <div className='flex flex-wrap gap-4 mb-6'>
+    <div className="container bg-white mx-auto">
+      <div class="mb-10 flex items-center justify-between gap-4 md:flex-nowrap">
         <input
-          type='text'
-          placeholder='Search for items...'
+          type="text"
+          placeholder="Search for items..."
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
@@ -70,37 +73,70 @@ const RestaurantMenu = ({ menu }) => {
               setActiveAccordionIndex(1); // Default index when search is cleared
             }
           }}
-          className='flex-1 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
+          className="flex-1 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <div className='flex gap-2'>
+        <div className="flex flex-wrap items-center gap-4 md:flex-nowrap">
           <button
-            onClick={() => setFilter('all')}
-            className={`p-2 px-4 rounded-lg shadow-md transition-all ${
-              filter === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
-            }`}
+            type="button"
+            class="inline-flex items-center gap-4 rounded-full border border-default-200 px-4 py-2.5 text-sm text-default-950 transition-all lg:hidden xl:px-5"
+            data-hs-overlay="#filter_Offcanvas"
           >
-            All
+            <p className="hidden md:block">Filter</p>
+            <svg
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              height="16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M20 7h-9"></path>
+              <path d="M14 17H5"></path>
+              <circle cx="17" cy="17" r="3"></circle>
+              <circle cx="7" cy="7" r="3"></circle>
+            </svg>
           </button>
-          <button
-            onClick={() => setFilter('veg')}
-            className={`p-2 px-4 rounded-lg shadow-md transition-all ${
-              filter === 'veg' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-800'
-            }`}
-          >
-            Veg
-          </button>
-          <button
-            onClick={() => setFilter('non-veg')}
-            className={`p-2 px-4 rounded-lg shadow-md transition-all ${
-              filter === 'non-veg' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-800'
-            }`}
-          >
-            Non-Veg
-          </button>
+        </div>
+        <div className="flex flex-wrap gap-4 hidden md:block">
+          <div className="flex gap-2">
+            <button
+              onClick={() => setFilter("all")}
+              className={`p-2 px-4 rounded-lg shadow-md transition-all ${
+                filter === "all"
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              All
+            </button>
+            <button
+              onClick={() => setFilter("veg")}
+              className={`p-2 px-4 rounded-lg shadow-md transition-all ${
+                filter === "veg"
+                  ? "bg-green-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              Veg
+            </button>
+            <button
+              onClick={() => setFilter("non-veg")}
+              className={`p-2 px-4 rounded-lg shadow-md transition-all ${
+                filter === "non-veg"
+                  ? "bg-red-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              Non-Veg
+            </button>
+          </div>
         </div>
       </div>
       {noResults ? (
-        <div className='p-4 text-center text-red-600 bg-red-100 rounded-lg'>
+        <div className="p-4 text-center text-red-600 bg-red-100 rounded-lg">
           No items found matching your criteria.
         </div>
       ) : (
